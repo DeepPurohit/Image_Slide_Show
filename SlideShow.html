@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>click</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link href="CustomStyle.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav id="navbar">
+      <header id="logo">Website Logo</header>
+      <ul id="nav-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+
+<div id="container">
+    <img class="pic_slide" src="pics\pic5.jpg" alt="pic1" />
+    <img class="pic_slide" src="pics\pic2.jpg" alt="pic2" />
+    <img class="pic_slide" src="pics\pic3.jpg" alt="pic3" />
+    <img class="pic_slide" src="pics\pic4.jpg" alt="pic4" />
+    <button id="btnl" onclick="prev(-1)">&#10094</button>
+    <button id="btnr" onclick="next(1)">&#10095</button>
+</div>
+
+    <script type="text/javascript">
+      var click=1;
+
+function next(n) {
+click = click + n;
+slideshow(click);
+}
+
+function prev(n) {
+click = click + n;
+slideshow(click);
+}
+
+      slideshow(1);
+
+      function slideshow(n) {
+        var i;
+          var x = document.getElementsByClassName("pic_slide");
+          if(n>x.length){click = 1};
+          if(n<1){click = x.length;}
+          for(i=0; i<x.length; i++){
+            x[i].style.display="none";
+          }
+          x[click-1].style.display="block";
+      }
+
+      slide();
+
+      function slide() {
+        var i;
+        var x = document.getElementsByClassName("pic_slide");
+        for(i=0; i<x.length; i++){
+          x[i].style.display="none";
+        }
+        if(click>x.length){click=1}
+        x[click-1].style.display="block";
+        click++;
+        setTimeout(slide,2000);
+      }
+    </script>
+  </body>
+</html>
