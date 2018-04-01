@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <title>click</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   	<link href="CustomStyle.css" rel="stylesheet">
   </head>
   <body>
@@ -23,7 +27,10 @@
     <img class="pic_slide" src="https://i.pinimg.com/originals/1c/95/8a/1c958af9a9d8586fd4513cec2e67a420.jpg" alt="pic2" />
     <img class="pic_slide" src="https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/free-widescreen-wallpaper-downloads-hd-wallpapers-widescreen-free-download-8.jpg" alt="pic3" />
     <img class="pic_slide" src="https://www.pixelstalk.net/wp-content/uploads/images1/Dark-forest-moon-wallpaper-hd.jpg" alt="pic4" />
-    <button id="btnl" onclick="prev(-1)">&#10094</button>
+    <img class="pic_slide" src="https://i.pinimg.com/originals/1c/95/8a/1c958af9a9d8586fd4513cec2e67a420.jpg" alt="pic5" />
+    <img class="pic_slide" src="https://desktopwalls.net/wp-content/uploads/2015/09/Autumn%20Forest%20Landscape%204K%20Ultra%20HD%20Desktop%20Wallpaper.jpg" alt="pic6" />
+    <img class="pic_slide" src="https://gallery.yopriceville.com/var/albums/Nature/Forest_Trail_Landscape_Wallpaper.jpg?m=1370300400" alt="pic7" />
+    <button id="btnl" onclick="prev(1)">&#10094</button>
     <button id="btnr" onclick="next(1)">&#10095</button>
 </div>
 
@@ -36,9 +43,10 @@ slideshow(click);
 }
 
 function prev(n) {
-click = click + n;
+click = click - n;
 slideshow(click);
 }
+
 
       slideshow(1);
 
@@ -66,6 +74,8 @@ slideshow(click);
         click++;
         setTimeout(slide,2000);
       }
+      console.log(click);
+      
     </script>
   </body>
 </html>
